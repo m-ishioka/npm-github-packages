@@ -60,16 +60,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: 18.14.x
           registry-url: "https://npm.pkg.github.com"
 
       # キャッシュ
       - name: Cache node modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           # npm キャッシュファイルは Linux/macOS の `~/.npm` に保存される
           path: ~/.npm
@@ -90,7 +90,7 @@ jobs:
 
       # タグを作成する
       - name: package-version-to-git-tag
-        uses: pkgdeps/git-tag-action@v2
+        uses: pkgdeps/git-tag-action@v3
         with:
           # 以下は魔法の呪文的なお決まり
           github_token: ${{ secrets.GITHUB_TOKEN }}
