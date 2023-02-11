@@ -44,7 +44,7 @@ jobs:
 
         # タグが存在するかを判定
       - name: check tag exists
-        uses: mukunku/tag-exists-action@v1.0.0
+        uses: mukunku/tag-exists-action@v1.2.0
         id: check-tag
         with:
           tag: ${{ steps.package-version.outputs.version }}
