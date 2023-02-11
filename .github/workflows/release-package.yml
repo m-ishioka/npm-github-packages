@@ -35,12 +35,12 @@ jobs:
         id: package-version
         # node -p 結果を出力 -e 渡した文字列をスクリプトとして実行
         # 出力パラメータの設定 '`::set-output name=version::${require("./package.json").version}`'
-        run: node -p -e '`name=version=${require("./package.json").version} >> $GITHUB_OUTPUT`'
+        run: node -p -e '`name=version=${require("./package.json").version}` >> $GITHUB_OUTPUT'
 
       - name: check pre-release
         # 範囲指定有無の判定
         id: pre-version
-        run: node -p -e '`name=pre-version=${require("./package.json").version.includes("-")} >> $GITHUB_OUTPUT`'
+        run: node -p -e '`name=pre-version=${require("./package.json").version.includes("-")}` >> $GITHUB_OUTPUT'
 
         # タグが存在するかを判定
       - name: check tag exists
