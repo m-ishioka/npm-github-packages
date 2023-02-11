@@ -93,7 +93,7 @@ jobs:
         uses: pkgdeps/git-tag-action@v2
         with:
           # 以下は魔法の呪文的なお決まり
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ACTIONS_WORKFLOW_TOKEN }}
           github_repo: ${{ github.repository }}
           version: ${{ needs.setup.outputs.version }}
           git_commit_sha: ${{ github.sha }}
