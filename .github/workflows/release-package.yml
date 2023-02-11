@@ -34,7 +34,6 @@ jobs:
       - name: set package version
         id: package-version
         # node -p 結果を出力 -e 渡した文字列をスクリプトとして実行
-        # 出力パラメータの設定 '`::set-output name=version::${require("./package.json").version}`'
         run: node -p -e '`version=${require("./package.json").version}`' >> $GITHUB_OUTPUT
 
       - name: check pre-release
